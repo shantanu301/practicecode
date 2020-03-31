@@ -1,0 +1,14 @@
+<div class="container mx-auto bg-light p-5">
+    <div class="col-12">
+        <div class="form-group">
+            <label>Mobile Number</label>
+            <input type="text" class="form-control" #mobile>
+        </div>
+        <div class="form-group">
+            <label>OTP</label>
+            <input type="text" class="form-control" #otp>
+        </div>
+        <button class="btn btn-primary mr-3" (click)="getVal(mobile.value,otp.value)">Okay</button>
+        <a routerLink="resetpin" class="btn btn-outline-danger">Forget Pin</a>
+    </div>
+</div>
