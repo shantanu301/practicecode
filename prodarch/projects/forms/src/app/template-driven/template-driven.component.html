@@ -1,0 +1,41 @@
+<form class="my-5" #form="ngForm">
+    <div class="form-group">
+        <label>Enter your first name</label>
+        <input type="text" 
+        class="form-control"
+        required
+        name="fname"
+        ngModel
+        #fname="ngModel" >
+        <small class="text-danger"
+        *ngIf="!fname.valid">enter valid first name</small>
+    </div>
+    <div class="form-group">
+        <label>Enter your last name</label>
+        <input type="text" 
+        class="form-control"
+        name="lname"
+        required
+        ngModel
+        #lname="ngModel">
+        <small class="text-danger"
+        *ngIf="!lname.valid">enter valid last name</small>
+    </div>
+    <div class="form-group">
+        <label>Enter your emil id</label>
+        <input type="email" 
+        class="form-control"
+        name="email"
+        [pattern]="ept"
+        required
+        ngModel
+        #email="ngModel">
+
+        <small class="text-danger"
+        *ngIf="email.errors?.required">enter email ID</small>
+        <br>
+        <small class="text-danger"
+        *ngIf="email.errors?.pattern">enter valid email ID</small>
+    </div>
+    <button [disabled]="!form.valid" class="btn btn-primary">submit</button>
+</form>
