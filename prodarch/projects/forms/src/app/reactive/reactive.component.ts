@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-reactive',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReactiveComponent implements OnInit {
 
-  constructor() { }
+  frmGrp : FormGroup
+
+  constructor(private fb : FormBuilder) { }
 
   ngOnInit(): void {
+    this.frmGrp =  this.fb.group({
+      fname : this.fb.control('',Validators.required),
+      lname : this.fb.control('',Validators.required),
+      eml : this.fb.control('',Validators.required)
+    })
   }
 
 }

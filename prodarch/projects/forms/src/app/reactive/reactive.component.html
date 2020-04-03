@@ -1,1 +1,30 @@
-<p>reactive works!</p>
+<form class="my-5" novalidate [formGroup]="frmGrp">
+    <div class="form-group">
+        <label>Enter your first name</label>
+        <input type="text" 
+            class="form-control" 
+            formControlName="fname">
+        <small 
+            class="text-danger"
+            *ngIf="!frmGrp.controls.fname.valid">enter valid first name</small>
+    </div>
+    <div class="form-group">
+        <label>Enter your last name</label>
+        <input type="text" 
+            class="form-control" 
+            formControlName="lname">
+        <small 
+            class="text-danger"
+            *ngIf="!frmGrp.controls.lname.valid">enter valid last name</small>
+    </div>
+    <div class="form-group">
+        <label>Enter your emil id</label>
+        <input type="email" 
+            class="form-control" 
+            formControlName="eml">
+        <small 
+            class="text-danger"
+            *ngIf="!frmGrp.controls.eml.valid">enter email ID</small>
+    </div>
+    <button [disabled]="!frmGrp.valid" class="btn btn-primary">submit</button>
+</form>

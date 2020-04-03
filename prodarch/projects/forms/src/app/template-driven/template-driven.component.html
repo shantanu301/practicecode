@@ -7,8 +7,10 @@
         name="fname"
         ngModel
         #fname="ngModel" >
+
         <small class="text-danger"
         *ngIf="!fname.valid">enter valid first name</small>
+
     </div>
     <div class="form-group">
         <label>Enter your last name</label>
@@ -18,6 +20,7 @@
         required
         ngModel
         #lname="ngModel">
+        
         <small class="text-danger"
         *ngIf="!lname.valid">enter valid last name</small>
     </div>
@@ -30,7 +33,6 @@
         required
         ngModel
         #email="ngModel">
-
         <small class="text-danger"
         *ngIf="email.errors?.required">enter email ID</small>
         <br>
