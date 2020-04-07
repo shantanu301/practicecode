@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-primary" (click)="getOne()">get one</button>
+      <button class="btn btn-primary" (click)="getMany()">Many</button>
+    </div>
+  </div>
+</div>
+<div class="card" style="width: 14rem;">
+  <img class="card-img-top" [src]="data?.avatar" alt="Card image cap" />
+  <div class="card-body">
+    <h5 class="card-title">ID - {{ data?.id }}</h5>
+    <p class="card-text">{{ data?.first_name }} {{ data?.last_name }}</p>
+    <p class="card-text">{{ data?.email }}</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let data of user">
+      <div class="card">
+        <img class="card-img-top" [src]="data?.avatar" alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title">ID - {{ data?.id }}</h5>
+          <p class="card-text">{{ data?.first_name }} {{ data?.last_name }}</p>
+          <p class="card-text">{{ data?.email }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
